@@ -37,17 +37,16 @@ def genNetwork(length, maliciousFactor):
 
 def checkConsensus(arr, poolPos):
     """
-       checkConsensus take as parameter the pool to check and the network matrix and return a bool
-       True if consenesus is reached, False if it is not the case
+       checkConsensus take as parameter the pool to check and the network matrix
+       return a bool True if consenesus is reached, False if it is not the case
     """
-    pool = []
-    blacklisted = []
+    pool, blacklisted = [[] for _ in range(2)]
     for i in poolPos:
         pool.append(arr[i[0]][i[1]])
         if arr[i[0]][i[1]] == 1:
             blacklisted.append(i)
 
-    #print pool
+    print pool
 
     for i in pool:
         if i == 1:
@@ -64,8 +63,7 @@ def chooseRandomPool(arr,np,length,blacklisted):
        blacklisted: is the array contained the position of blacklisted peer
     """
     ppos = 0
-    pos = []
-    pool = []
+    pos, pool = [[] for _ in range(2)]
     while ppos < np:
         x = randint(0, (length-1))
         y = randint(0, (length-1))

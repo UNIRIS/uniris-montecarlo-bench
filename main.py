@@ -21,8 +21,7 @@ def main():
 
 
     iteration, cosensusReached  = [0 for _ in range(2)]
-    gBlacklisted = []
-    tBlacklisted = []
+    tBlacklisted, gBlacklisted = [[] for _ in range(2)]
     c = True
 
     while iteration < int(sys.argv[4]):
